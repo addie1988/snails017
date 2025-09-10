@@ -109,7 +109,7 @@ body {
 }
 
 .banner .banner_content .banner_img .banner_img_content ul {
-  width: 50%;
+  width: 32%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -345,52 +345,82 @@ body {
 }
 
 @media screen and (max-width: 428px) {
-  .banner .banner_content .main_image .main_image_content .main_image_list .banner .banner_content .banner_img .banner_img_content ul li:nth-child(2) {
+  .banner .banner_content .banner_img .banner_img_content ul {
+    height: 140px;
+  }
+  .banner .banner_content .banner_img .banner_img_content ul li:nth-child(2) {
     position: absolute;
   }
 }
 
 @media (max-width: 480px) {
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item {
+  .image-item {
     margin: 0 3px;
   }
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item img {
+  .image-item img {
     border-radius: 12px;
   }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item {
+  .image-item {
     margin: 0 5px;
   }
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item img {
+  .image-item img {
     border-radius: 15px;
   }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+@media screen and (max-width: 700px) {
+  .banner .banner_content .banner_img .banner_img_content p {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
   .banner .banner_content .main_image .main_image_content .main_image_list .image-item {
+    width: 60%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .image-item {
     margin: 0 8px;
   }
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item img {
+  .image-item img {
     border-radius: 18px;
   }
 }
 
 @media (min-width: 1025px) {
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item {
+  .image-item {
     margin: 0 10px;
   }
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item img {
+  .image-item img {
     border-radius: 20px;
   }
 }
 
+@media (max-width: 300px) {
+  .banner .banner_content {
+    max-width: 100%;
+  }
+  .banner .banner_content .banner_img {
+    overflow: hidden;
+  }
+  .banner .banner_content .banner_text .banner_text_content h1 {
+    font-size: 3em;
+  }
+  .banner .banner_content .banner_text .banner_text_content a {
+    padding: 10px;
+  }
+}
+
 @media (max-width: 320px) {
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item {
+  .image-item {
     margin: 0 2px;
   }
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item img {
+  .image-item img {
     width: 60px;
     height: 60px;
     border-radius: 10px;
@@ -398,10 +428,10 @@ body {
 }
 
 @media (min-width: 1440px) {
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item {
+  .image-item {
     margin: 0 15px;
   }
-  .banner .banner_content .main_image .main_image_content .main_image_list .image-item img {
+  .image-item img {
     border-radius: 25px;
   }
 }

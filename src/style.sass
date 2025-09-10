@@ -99,7 +99,7 @@ body
                 margin: 0 auto
 
                 ul
-                    width: 50%
+                    width: 32%
                     margin: 0 auto
                     display: flex
                     justify-content: center
@@ -197,7 +197,7 @@ body
 
                     &.fan-spread
                         transform: scale(1.05)
-                        
+
                         .image-item
                             &.fan-item-1
                                 transform: translate(0, -50px) rotate(0deg)
@@ -212,7 +212,7 @@ body
 
                     &.fan-gather
                         transform: scale(1)
-                        
+
                         .image-item
                             transform: translate(0, 0) rotate(0deg)
 
@@ -226,10 +226,10 @@ body
                         flex-direction: column
                         align-items: center
                         gap: 20px
-                        
+
                         &.fan-spread
                             transform: scale(1.02)
-                            
+
                             .image-item
                                 &.fan-item-1
                                     transform: translate(0, -30px) rotate(0deg)
@@ -241,14 +241,14 @@ body
                                     transform: translate(30px, -60px) rotate(8deg)
                                 &.fan-item-5
                                     transform: translate(60px, -45px) rotate(15deg)
-                    
+
                     &.tablet
                         flex-wrap: wrap
                         justify-content: space-around
-                        
+
                         &.fan-spread
                             transform: scale(1.03)
-                            
+
                             .image-item
                                 &.fan-item-1
                                     transform: translate(0, -40px) rotate(0deg)
@@ -260,7 +260,7 @@ body
                                     transform: translate(40px, -80px) rotate(10deg)
                                 &.fan-item-5
                                     transform: translate(80px, -60px) rotate(20deg)
-                        
+
                         &.spread
                             transform: scale(1.08)
 
@@ -282,60 +282,93 @@ body
                             img
                                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4)
 
-                    // 響應式斷點
-                    @media screen and (max-width: 428px)
-                        .banner
-                            .banner_content
-                                .banner_img
-                                    .banner_img_content
-                                        ul
-                                            li
-                                                &:nth-child(2)
-                                                    position: absolute
-                                                    
+// 響應式斷點
+@media screen and (max-width: 428px)
+    .banner
+        .banner_content
+            .banner_img
+                .banner_img_content
+                    ul
+                        height: 140px
+                        li
+                            &:nth-child(2)
+                                position: absolute
 
-                    @media (max-width: 480px)
-                        .image-item
-                            margin: 0 3px
-                            
-                            img
-                                border-radius: 12px
+@media (max-width: 480px)
+    .image-item
+        margin: 0 3px
 
-                    @media (min-width: 481px) and (max-width: 768px)
-                        .image-item
-                            margin: 0 5px
-                            
-                            img
-                                border-radius: 15px
+        img
+            border-radius: 12px
 
-                    @media (min-width: 769px) and (max-width: 1024px)
-                        .image-item
-                            margin: 0 8px
-                            
-                            img
-                                border-radius: 18px
+@media (min-width: 481px) and (max-width: 768px)
+    .image-item
+        margin: 0 5px
 
-                    @media (min-width: 1025px)
-                        .image-item
-                            margin: 0 10px
-                            
-                            img
-                                border-radius: 20px
+        img
+            border-radius: 15px
 
-                    // 超小螢幕優化
-                    @media (max-width: 320px)
+@media screen and (max-width: 700px)
+    .banner
+        .banner_content
+            .banner_img
+                .banner_img_content
+                    ul
+                    p
+                        width: 100%
+@media screen and (max-width: 768px)
+    .banner
+        .banner_content
+            .banner_img
+            .banner_text
+            .main_image
+                .main_image_content
+                    .main_image_list
                         .image-item
-                            margin: 0 2px
-                            
+                            width: 60%
                             img
-                                width: 60px
-                                height: 60px
-                                border-radius: 10px
 
-                    // 大螢幕優化
-                    @media (min-width: 1440px)
-                        .image-item
-                            margin: 0 15px
-                            
-                            img
-                                border-radius: 25px
+@media (min-width: 769px) and (max-width: 1024px)
+    .image-item
+        margin: 0 8px
+
+        img
+            border-radius: 18px
+
+@media (min-width: 1025px)
+    .image-item
+        margin: 0 10px
+
+        img
+            border-radius: 20px
+
+@media (max-width: 300px)
+    .banner
+        .banner_content
+            max-width: 100%
+            .banner_img
+                overflow: hidden
+            .banner_text
+                .banner_text_content
+                    h1
+                        font-size: 3em
+                    a
+                        padding: 10px
+
+// 超小螢幕優化
+@media (max-width: 320px)
+    .image-item
+        margin: 0 2px
+
+        img
+            width: 60px
+            height: 60px
+            border-radius: 10px
+
+// 大螢幕優化
+@media (min-width: 1440px)
+    .image-item
+        margin: 0 15px
+
+        img
+            border-radius: 25px
