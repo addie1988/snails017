@@ -7,6 +7,8 @@ $fontfamily: "Galada", cursive
 body
     background-color: #000
 
+// ============================================================================================================= >    
+
 .header
     position: relative
 
@@ -80,7 +82,7 @@ body
                 .header_qr_text
                     transform: translateY(0)
 
-// ----------------------------------------------------------------------------------------------------------   
+// ============================================================================================================= >
 
 .banner
     position: relative
@@ -178,7 +180,7 @@ body
 
         .main_image
             position: relative
-            margin-top: 100px
+            margin-top: 160px
 
             .main_image_content
                 margin: 0 auto
@@ -265,7 +267,7 @@ body
                             transform: scale(1.08)
 
                     .image-item
-                        width: 14%
+                        width: 17%
                         position: relative
                         margin: 0 10px
                         transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1)
@@ -283,7 +285,7 @@ body
                                 box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4)
 
 // 響應式斷點
-@media screen and (max-width: 428px)
+@media screen and (max-width: 600px)
     .banner
         .banner_content
             .banner_img
@@ -347,7 +349,7 @@ body
         .banner_content
             max-width: 100%
             .banner_img
-                overflow: hidden
+                overflow-x: hidden
             .banner_text
                 .banner_text_content
                     h1
@@ -362,7 +364,6 @@ body
 
         img
             width: 60px
-            height: 60px
             border-radius: 10px
 
 // 大螢幕優化
@@ -372,3 +373,873 @@ body
 
         img
             border-radius: 25px
+
+// ============================================================================================================= >    
+
+.product_selection
+    position: relative
+    padding-top: 60px
+
+    .product_selection_content
+        max-width: $maxwidth
+        margin: 0 auto
+        display: flex
+        justify-content: center
+        align-items: center
+        gap: 40px
+
+        .music
+            position: relative
+            width: 30%
+            z-index: 2
+
+            .music_content
+                margin: 0 auto
+                background-color: #1f2023
+                border-radius: 20px
+                display: flex
+                flex-wrap: wrap
+                justify-items: center
+                padding: 70px 0
+
+                .music_content_img
+                    position: relative
+                    width: 100%
+
+                    &::before
+                        content: ''
+                        position: absolute
+                        bottom: 0px
+                        left: -180px
+                        width: 100%
+                        height: 100%
+                        background: url('./images/music_2.png') no-repeat center center
+                        animation: music_before 10s ease-in-out infinite
+
+                    &::after
+                        content: ''
+                        position: absolute
+                        bottom: 0px
+                        right: -180px
+                        width: 100%
+                        height: 100%
+                        background: url('./images/music_3.png') no-repeat center center
+                        animation: music_after 10s ease-in-out infinite
+
+                    .music_content_img_content
+                        margin: 0 auto
+                        display: flex
+                        justify-content: center
+                        img
+                            width: 80%
+
+                .music_text
+                    position: relative
+                    width: 100%
+                    padding-top: 40px
+
+                    .music_text_content
+                        margin: 0 auto
+                        text-align: center
+
+                        h3
+                            color: #fff
+                            font-size: 20px
+                            font-family: $fontfamily
+                            font-weight: 400
+                        p
+                            color: #fff
+                            font-size: 16px
+                            font-family: $fontfamily
+                            font-weight: 400
+                            margin-top: 10px
+
+        .featured
+            position: relative
+            width: 30%
+            z-index: 1
+
+            .featured_content
+                margin: 0 auto
+                background-color: #1f2023
+                border-radius: 20px
+                display: flex
+                flex-wrap: wrap
+                justify-items: center
+                padding: 70px 0
+
+                .featured_content_img
+                    position: relative
+                    width: 100%
+                    overflow: hidden
+                    border-radius: 15px
+
+                    .featured_content_img_content
+                        position: relative
+                        width: 100%
+
+                        .carousel_container
+                            position: relative
+                            width: 100%
+                            height: 100%
+                            overflow: hidden
+                            // 添加漸變邊緣效果
+                            &::before
+                                content: ''
+                                position: absolute
+                                top: 0
+                                left: 0
+                                width: 50px
+                                background: linear-gradient(to right, #1f2023, transparent)
+                                z-index: 3
+                                pointer-events: none
+
+                            &::after
+                                content: ''
+                                position: absolute
+                                top: 0
+                                right: 0
+                                width: 50px
+                                background: linear-gradient(to left, #1f2023, transparent)
+                                z-index: 3
+                                pointer-events: none
+
+                            .carousel_track
+                                display: flex
+                                width: 300% // 18張圖片 = 6張原始圖片 × 3
+                                will-change: transform
+                                backface-visibility: hidden
+                                transform-style: preserve-3d
+
+                                // JavaScript 控制的無限滾動
+                                &.js-infinite-scroll
+                                    // 移除所有 CSS 動畫，使用 JavaScript 控制
+
+                                // JavaScript 控制，移除 CSS 動畫類別
+
+                                .carousel_item
+                                    flex: 0 0 14% // 100% / 18 = 5.555%carousel_item
+                                    display: flex
+                                    align-items: center
+                                    justify-content: center
+                                    padding: 10px
+
+                                    img
+                                        width: 100%
+                                        object-fit: cover
+                                        border-radius: 10px
+                                        transition: transform 0.3s ease
+
+                                        &:hover
+                                            transform: scale(1.05)
+
+                .featured_content_text
+                    position: relative
+                    width: 100%
+                    padding-top: 40px
+
+                    .featured_content_text_content
+                        margin: 0 auto
+                        text-align: center
+
+                        h3
+                            color: #fff
+                            font-size: 20px
+                            font-family: $fontfamily
+                            font-weight: 400
+                        p
+                            color: #fff
+                            font-size: 16px
+                            font-family: $fontfamily
+                            font-weight: 400
+                            margin-top: 10px
+
+        .broadcast
+            position: relative
+            width: 30%
+            z-index: 1
+
+            .broadcast_content
+                margin: 0 auto
+                background-color: #1f2023
+                border-radius: 20px
+                display: flex
+                flex-wrap: wrap
+                justify-items: center
+                padding: 70px 0
+
+                .broadcast_content_img
+                    position: relative
+                    width: 100%
+
+                    .broadcast_content_img_content
+                        margin: 0 auto
+                        display: flex
+                        justify-content: center
+
+                        img
+                            width: 80%
+
+                .broadcast_content_text
+                    position: relative
+                    width: 100%
+                    padding-top: 40px
+
+                    .broadcast_content_text_content
+                        margin: 0 auto
+                        text-align: center
+
+                        h3
+                            color: #fff
+                            font-size: 20px
+                            font-family: $fontfamily
+                            font-weight: 400
+                        p
+                            color: #fff
+                            font-size: 16px
+                            font-family: $fontfamily
+                            font-weight: 400
+                            margin-top: 10px
+
+    .fan
+        position: relative
+        padding-top: 20px
+
+        .fan_content
+            margin: 0 auto
+            max-width: $maxwidth
+            display: flex
+            flex-wrap: wrap
+            justify-content: center
+            align-items: center
+            border: 6px solid transparent
+            border-image: $lineargradientbackground
+            border-image-slice: 1
+            background-color: #000
+            overflow: hidden
+
+            .fan_content_img
+                position: relative
+                width: 100%
+                margin-top: -20px
+
+                .fan_content_img_content
+                    margin: 0 auto
+                    display: flex
+                    justify-content: center
+                    img
+                        width: 80%
+
+            .fan_content_text
+                position: relative
+                width: 100%
+                padding: 80px 0
+
+                .fan_content_text_content
+                    margin: 0 auto
+                    text-align: center
+
+                    h3
+                        color: #fff
+                        font-size: 20px
+                        font-family: $fontfamily
+                        font-weight: 400
+                    p
+                        color: #fff
+                        font-size: 16px
+                        font-family: $fontfamily
+                        font-weight: 400
+                        margin-top: 10px
+
+// 響應式設計 - 產品選擇區域輪播
+@media (max-width: 768px)
+    .product_selection
+        .product_selection_content
+            flex-direction: column
+            gap: 30px
+
+            .music, .featured, .broadcast
+                width: 100%
+
+            .featured
+                .featured_content
+                    .featured_content_img
+                        .featured_content_img_content
+                            height: 150px
+
+                            .carousel_container
+                                &::before, &::after
+                                    width: 30px
+
+                                .carousel_track
+                                    .carousel_item
+                                        padding: 5px
+
+                                        img
+                                            border-radius: 8px
+
+@media (min-width: 769px) and (max-width: 1024px)
+    .product_selection
+        .product_selection_content
+            .featured
+                .featured_content
+                    .featured_content_img
+                        .featured_content_img_content
+
+                            .carousel_container
+                                &::before, &::after
+                                    width: 40px
+
+                                .carousel_track
+                                    .carousel_item
+                                        padding: 8px
+
+                                        img
+                                            border-radius: 12px
+
+@media (min-width: 1025px)
+    .product_selection
+        .product_selection_content
+            .featured
+                .featured_content
+                    .featured_content_img
+                        .featured_content_img_content
+
+                            .carousel_container
+                                &::before, &::after
+                                    width: 50px
+
+                                .carousel_track
+                                    .carousel_item
+                                        padding: 10px
+
+                                        img
+                                            border-radius: 15px
+
+// 無限輪播動畫 - 跑馬燈效果（完美無限循環）
+@keyframes infiniteScroll
+    0%
+        transform: translateX(0%)
+
+    100%
+        transform: translateX(-66.666%) // 移動2/3距離，因為有18張圖片（6張原始圖片重複3次）
+
+// 真正的無限播放動畫（不跳回）
+@keyframes infinitePlay
+    0%
+        transform: translateX(0%)
+
+    100%
+        transform: translateX(-66.666%)
+
+// 備用無限循環動畫
+@keyframes infiniteLoop
+    0%
+        transform: translateX(0%)
+
+    100%
+        transform: translateX(-66.666%)
+
+// 確保無限延伸的動畫
+@keyframes infiniteExtend
+    0%
+        transform: translateX(0%)
+
+    100%
+        transform: translateX(-66.666%)
+
+// 終極無限循環動畫
+@keyframes ultimateInfiniteLoop
+    0%
+        transform: translateX(0%)
+
+    100%
+        transform: translateX(-66.666%)
+
+// 無縫無限延伸動畫
+@keyframes seamlessInfiniteExtend
+    0%
+        transform: translateX(0%)
+
+    100%
+        transform: translateX(-66.666%)
+
+// 終極無限播放動畫（完全不中斷）
+@keyframes ultimateInfinitePlay
+    0%
+        transform: translateX(0%)
+
+    100%
+        transform: translateX(-66.666%)
+
+// 完美無限循環動畫
+@keyframes perfectInfiniteLoop
+    0%
+        transform: translateX(0%)
+
+    100%
+        transform: translateX(-66.666%)
+
+@keyframes music_before
+    0%
+        transform: translateY(0px)
+
+    20%
+        transform: translateY(60px)
+
+    40%
+        transform: translateY(100px)
+
+    60%
+        transform: translateY(20px)
+
+    80%
+        transform: translateY(60px)
+
+    100%
+        transform: translateY(0px)
+
+@keyframes music_after
+    0%
+        transform: translateY(0px)
+
+    20%
+        transform: translateY(40px)
+
+    40%
+        transform: translateY(100px)
+
+    60%
+        transform: translateY(60px)
+
+    80%
+        transform: translateY(40px)
+
+    100%
+        transform: translateY(0px)
+
+@media screen and (max-width: 1400px)
+    .product_selection
+        overflow: hidden
+        .product_selection_content
+            flex-wrap: wrap
+            .music, .featured, .broadcast
+                width: 100%
+
+@media screen and (max-width: 600px)
+    .product_selection
+        .product_selection_content
+        .fan
+            .fan_content
+                .fan_content_img
+                    margin-top: 0px
+
+// ============================================================================================================= >       
+
+.join_in
+    position: relative
+
+    .join_in_content
+        margin: 0 auto
+        max-width: $maxwidth
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+
+        .join_in_content_title
+            position: relative
+            padding-top: 200px
+
+            .join_in_content_title_content
+                margin: 0 auto
+
+                h1
+                    font-size: 5em
+                    color: #fff
+                    font-family: $fontfamily
+                    text-align: center
+
+        .join_in_content_text
+            position: relative
+            padding-bottom: 100px
+
+            .join_in_content_text_content
+                margin: 0 auto
+
+                p
+                    font-size: 16px
+                    color: #fff
+                    font-family: $fontfamily
+                    text-align: center
+                    padding-top: 40px
+
+                    &:nth-child(2)
+                        padding-top: 100px
+
+        .join_in_content_button
+            position: relative
+            width: 100%
+
+            .join_in_content_button_content
+                margin: 0 auto
+                text-align: center
+
+                a
+                    font-size: 16px
+                    color: #fff
+                    font-family: $fontfamily
+                    text-decoration: none
+                    padding: 10px 40px
+                    border: 2px solid transparent
+                    border-image: $lineargradientbackground
+                    border-image-slice: 1
+                    background-color: #000
+
+// ============================================================================================================= >       
+
+.story
+    position: relative
+    padding-top: 100px
+
+    .story_content
+        width: 100%
+        margin: 0 auto
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+
+        .story_1
+            position: relative
+            height: 934px
+            overflow: hidden
+            background: url('./images/story_1_2.jpg')
+            background-position: top center
+            background-size: cover
+
+            .story_1_content
+                margin: 0 auto
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                align-items: center
+                .story_1_content_text
+                    position: relative
+                    width: 50%
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: center
+                    align-items: center
+                    .story_1_content_text_content
+                        position: relative
+                        width: 60%
+                        padding: 0px 20px
+                        display: flex
+                        flex-wrap: wrap
+                        justify-content: left
+                        align-items: center
+
+                        h1
+                            font-size: 5em
+                            color: #fff
+                            font-family: $fontfamily
+                            text-align: left
+                        p
+                            font-size: 20px
+                            color: #fff
+                            font-family: $fontfamily
+                            text-align: left
+                            line-height: 2
+
+            .story_1_content_img
+                position: relative
+                width: 50%
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                align-items: center
+
+        .story_2
+            position: relative
+            height: 934px
+            overflow: hidden
+            background: url('./images/story_2_2.jpg')
+            background-position: center center
+            background-size: cover
+
+            .story_2_content
+                margin: 0 auto
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                align-items: center
+                .story_2_content_text
+                    position: relative
+                    width: 50%
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: center
+                    align-items: center
+                    .story_2_content_text_content
+                        position: relative
+                        width: 60%
+                        padding: 0px 20px
+                        display: flex
+                        flex-wrap: wrap
+                        justify-content: left
+                        align-items: center
+
+                        h1
+                            font-size: 5em
+                            color: #fff
+                            font-family: $fontfamily
+                            text-align: left
+                        p
+                            font-size: 20px
+                            color: #fff
+                            font-family: $fontfamily
+                            text-align: left
+                            line-height: 2
+
+            .story_2_content_img
+                position: relative
+                width: 50%
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                align-items: center
+
+        .story_3
+            position: relative
+            height: 934px
+            overflow: hidden
+            background: url('./images/story_3_2.jpg')
+            background-position: top center
+            background-size: cover
+
+            .story_3_content
+                margin: 0 auto
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                align-items: center
+                .story_3_content_text
+                    position: relative
+                    width: 50%
+                    display: flex
+                    flex-wrap: wrap
+                    justify-content: center
+                    align-items: center
+                    .story_3_content_text_content
+                        position: relative
+                        width: 60%
+                        padding: 0px 20px
+                        display: flex
+                        flex-wrap: wrap
+                        justify-content: left
+                        align-items: center
+
+                        h1
+                            font-size: 5em
+                            color: #fff
+                            font-family: $fontfamily
+                            text-align: left
+                        p
+                            font-size: 20px
+                            color: #fff
+                            font-family: $fontfamily
+                            text-align: left
+                            line-height: 2
+
+            .story_3_content_img
+                position: relative
+                width: 50%
+                display: flex
+                flex-wrap: wrap
+                justify-content: center
+                align-items: center
+
+        .story_4
+            position: relative
+            width: 100%
+
+            .download
+                position: relative
+                padding-top: 200px
+                background-color: #000
+
+                .download_content
+                    height: 547px
+                    margin: 0 auto
+                    max-width: $maxwidth
+                    position: relative
+                    border: 4px solid transparent
+                    border-image: $lineargradientbackground
+                    border-image-slice: 1
+                    background-color: #000
+                    display: flex
+                    justify-content: center
+
+                    .download_content_img
+                        position: absolute
+                        top: 300px
+                        width: 200px
+                        text-align: center
+                        line-height: 2
+                        padding-top: 40px
+                        transform: translateY(-150%)
+                        transition: all .7s ease-in-out
+                        z-index: 5
+
+                        .download_content_img_content
+                            padding: 20px
+                            border: 4px solid transparent
+                            border-image: $lineargradientbackground
+                            background-color: #000
+                            border-image-slice: 1
+
+                            img
+                                width: 100%
+
+                            p
+                                color: #fff
+                                font-size: 22px
+
+                        &:nth-child(3)
+                            font-size: 12px
+
+                    .download_content_title
+                        position: relative
+
+                        .download_content_title_content
+                            margin: 0 auto
+                            text-align: center
+                            padding-top: 300px
+
+                            h1
+                                font-size: 5em
+                                color: #fff
+                                font-family: $fontfamily
+                                text-align: center
+
+                            p
+                                font-size: 20px
+                                color: #fff
+                                font-family: $fontfamily
+                                text-align: center
+                                padding-top: 20px
+
+@media screen and (max-width: 1080px)
+    .story
+        .story_content
+            .story_1
+                display: flex
+                align-items: center
+                .story_1_content
+                    .story_1_content_text
+                        width: 100%
+                        order: 2
+                    .story_1_content_img
+                        order: 1
+                        .story_1_content_img_content
+                            img
+                                width: 100%
+            .story_2
+                display: flex
+                align-items: center
+                .story_2_content
+                    .story_2_content_text
+                        width: 100%
+                        order: 2
+                    .story_2_content_img
+                        order: 1
+                        .story_2_content_img_content
+                            img
+                                width: 100%
+            .story_3
+                display: flex
+                align-items: center
+                .story_3_content
+                    .story_3_content_text
+                        width: 100%
+                        order: 2
+                    .story_3_content_img
+                        order: 1
+                        .story_3_content_img_content
+                            img
+                                width: 100%
+
+@media screen and (max-width: 650px)
+    .story
+        .story_content
+            .story_4
+                .download
+                    .download_content
+                        .download_content_title
+                            .download_content_title_content
+                                padding-top: 180px
+                                h1
+                                    font-size: 4em
+
+@media screen and (max-width: 480px)
+    .story
+        .story_content
+            .story_1
+                .story_1_content
+                    .story_1_content_text
+                        .story_1_content_text_content
+                            width: 90%
+                            h1
+                                font-size: 3em
+                    .story_1_content_img
+            .story_2
+                .story_2_content
+                    .story_2_content_text
+                        .story_2_content_text_content
+                            width: 90%
+                            h1
+                                font-size: 3em
+                    .story_2_content_img
+            .story_3
+                .story_3_content
+                    .story_3_content_text
+                        .story_3_content_text_content
+                            width: 90%
+                            h1
+                                font-size: 3em
+                    .story_3_content_img
+            .story_4
+                .download
+                    .download_content
+                        .download_content_title
+                            .download_content_title_content
+                                h1
+                                    font-size: 3em
+
+// ============================================================================================================= >       
+
+.footer
+    position: relative
+    padding: 40px 0px
+
+    .footer_content
+        margin: 0 auto
+        max-width: $maxwidth
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+
+        .footer_content_text
+            position: relative
+
+            .footer_content_text_content
+                margin: 0 auto
+                text-align: center
+
+                p
+                    font-size: 16px
+                    color: #fff
+                    font-family: $fontfamily
+                    text-align: center
